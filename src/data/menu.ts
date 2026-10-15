@@ -71,8 +71,8 @@ export const menu: Category[] = [
   {
     id: 'picar',
     label: 'Para picar',
-    photo: 'mesa',
-    photoAlt: 'Amigos alrededor de una mesa con cervezas y algo para picar',
+    photo: 'nachos',
+    photoAlt: 'Nachos con cheddar y cerdo desmenuzado, con el salón de fondo',
     groups: [
       {
         items: [
@@ -131,8 +131,8 @@ export const menu: Category[] = [
   {
     id: 'tragos',
     label: 'Tragos y vinos',
-    photo: 'vereda',
-    photoAlt: 'Dos amigas con un trago, sentadas en la vereda',
+    photo: 'mesa',
+    photoAlt: 'Amigos alrededor de una mesa con tragos y cervezas',
     groups: [
       {
         title: 'Tragos',

@@ -16,6 +16,7 @@ const photos = [
   ['6.jpg', 'interior'],
   ['7.jpg', 'canilla'],
   ['8.jpg', 'wrap-neon'],
+  ['9.jpg', 'nachos'],
   ['promocion1_3.jpg', 'promo-2x1'],
 ]
 const widths = [640, 1280]

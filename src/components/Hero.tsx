@@ -23,7 +23,7 @@ const tubes: { word: string; d: number; pink?: boolean; stutter?: boolean; br?: 
   { word: 'amor', d: 0.3, stutter: true, br: true },
   { word: 'y', d: 0.75 },
   { word: 'más', d: 0.9, br: true },
-  { word: 'birra', d: 1.15, pink: true, stutter: true },
+  { word: 'cerveza', d: 1.15, pink: true, stutter: true },
 ]
 
 /** Etiqueta de la promo en el tablero: "Hoy" si corre hoy, si no el día en que corre. */
@@ -39,7 +39,7 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="wrap hero__grid">
         <div className="hero__copy">
-          <h1 className="neon hero__title wall-spill" aria-label="Más amor y más birra">
+          <h1 className="neon hero__title wall-spill" aria-label="Más amor y más cerveza">
             {tubes.map((t) => (
               <span key={t.word + t.d} aria-hidden="true">
                 <span
@@ -54,7 +54,7 @@ export function Hero() {
             ))}
           </h1>
           <p className="lede hero__lede">
-            Cervezas artesanales, burgers y patio en Alem 599, Pergamino. Para la juntada con amigos o para cortar la semana.
+            Birras artesanales, burgers y patio en Alem 599, Pergamino. Para la juntada con amigos o para cortar la semana.
           </p>
           <div className="hero__actions">
             <a className="btn btn--lit" href="#carta">
