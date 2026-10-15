@@ -18,3 +18,4 @@ dist-server/
 DESIGN.md
 PRODUCT.md
 public/preview.png
+*.tsbuildinfo
