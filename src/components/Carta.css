@@ -47,6 +47,9 @@
   align-items: start;
   animation: panel-in 0.5s var(--ease) both;
 }
+.carta__panel[hidden] {
+  display: none;
+}
 @keyframes panel-in {
   from {
     opacity: 0.4;

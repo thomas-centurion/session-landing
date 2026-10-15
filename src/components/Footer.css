@@ -28,6 +28,8 @@
 }
 .footer__meta a {
   color: var(--glow);
+  display: inline-block;
+  padding-block: 0.6rem;
 }
 .footer__legal {
   margin-top: 0.75rem;

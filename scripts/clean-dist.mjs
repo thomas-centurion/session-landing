@@ -1,6 +1,8 @@
-// Saca de dist/ los archivos de procedencia de las fotos (*.json): son para el proyecto, no para el sitio.
+// Saca de dist/ lo que no va al sitio: los archivos de procedencia de las fotos (*.json)
+// y capturas de pantalla sueltas que hayan quedado en public/.
 import { readdir, rm } from 'node:fs/promises'
 import path from 'node:path'
 
-const dir = 'dist/img'
-for (const f of await readdir(dir)) if (f.endsWith('.json')) await rm(path.join(dir, f))
+for (const dir of ['dist', 'dist/img'])
+  for (const f of await readdir(dir))
+    if (f.endsWith('.json') || f === 'preview.png') await rm(path.join(dir, f))

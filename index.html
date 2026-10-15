@@ -6,13 +6,55 @@
     <meta name="theme-color" content="#0F0906" />
     <title>Session Haus · Cervecería en Pergamino</title>
     <meta name="description" content="Birras artesanales, burgers y patio en Alem 599, Pergamino. Abrimos de miércoles a domingo desde las 18. Delivery y take away por WhatsApp." />
+    <link rel="canonical" href="https://session-haus.thomas-centurion.workers.dev/" />
+
+    <!-- Vista previa al compartir el link -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Session Haus" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://session-haus.thomas-centurion.workers.dev/" />
     <meta property="og:title" content="Session Haus · Más amor y más cerveza" />
     <meta property="og:description" content="Birras artesanales, burgers y patio en Pergamino. Mirá la carta con precios." />
-    <meta property="og:image" content="/img/canilla-1280.webp" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:image" content="https://session-haus.thomas-centurion.workers.dev/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gente saludando con una birra en el patio de Session Haus" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Datos del local para Google (búsquedas y Maps) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Session Haus",
+        "url": "https://session-haus.thomas-centurion.workers.dev/",
+        "image": "https://session-haus.thomas-centurion.workers.dev/og.jpg",
+        "logo": "https://session-haus.thomas-centurion.workers.dev/apple-touch-icon.png",
+        "telephone": "+54 2477 60-7686",
+        "priceRange": "$$",
+        "servesCuisine": ["Cerveza artesanal", "Hamburguesas", "Comida de bar"],
+        "hasMenu": "https://session-haus.thomas-centurion.workers.dev/#carta",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Alem 599",
+          "addressLocality": "Pergamino",
+          "addressRegion": "Buenos Aires",
+          "postalCode": "2700",
+          "addressCountry": "AR"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday"], "opens": "18:00", "closes": "00:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "04:00" }
+        ],
+        "sameAs": ["https://www.instagram.com/sessionhaus/"]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

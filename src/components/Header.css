@@ -33,7 +33,9 @@
   text-transform: uppercase;
   text-decoration: none;
   color: var(--cream-soft);
-  padding-block: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   transition: color 0.2s var(--ease);
 }
 .header__nav a:hover {

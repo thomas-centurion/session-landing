@@ -68,6 +68,30 @@
   filter: invert(0.9) hue-rotate(180deg) sepia(0.35) saturate(0.8) brightness(0.95);
 }
 
+/* Mapa apagado hasta que lo piden */
+.visit__map-off {
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+.visit__map-off p {
+  font-family: var(--tube);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--glow);
+}
+.visit__map-off small {
+  color: var(--cream-faint);
+  font-size: 0.95rem;
+}
+
 @media (max-width: 899px) {
   .visit__grid {
     grid-template-columns: 1fr;

@@ -37,7 +37,7 @@ for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
 
 await sharp(data, { raw: { width: w, height: h, channels: 4 } })
   .extract({ left: minX, top: minY, width: maxX - minX + 1, height: maxY - minY + 1 })
-  .resize({ width: 520 })
-  .png({ compressionLevel: 9 })
-  .toFile('public/img/logo.png')
+  .resize({ width: 360 })
+  .webp({ quality: 88, alphaQuality: 95 })
+  .toFile('public/img/logo.webp')
 console.log('logo', maxX - minX + 1, 'x', maxY - minY + 1)

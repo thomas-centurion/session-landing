@@ -45,8 +45,18 @@ for (const w of widths) {
 console.log('ok burger')
 
 // El sticker recortado del logo sale de scripts/logo.mjs.
-await sharp(path.join(SRC, 'logo.jfif'))
-  .resize({ width: 512, height: 512 })
-  .png()
-  .toFile('public/favicon.png')
+// Íconos chicos: pestaña del navegador (32 px) y acceso directo en iPhone (180 px).
+for (const [size, file] of [[32, 'public/favicon.png'], [180, 'public/apple-touch-icon.png']]) {
+  await sharp(path.join(SRC, 'logo.jfif')).resize(size, size).png({ compressionLevel: 9, palette: true }).toFile(file)
+}
 console.log('ok logo')
+
+// Imagen para la vista previa al compartir el link (WhatsApp, Instagram, Facebook): 1200×630 JPG.
+const logo = await sharp('public/img/logo.webp').resize({ width: 300 }).toBuffer()
+await sharp(path.join(SRC, '1.jpg'))
+  .extract({ left: 0, top: 1150, width: 3072, height: 1613 })
+  .resize(1200, 630)
+  .composite([{ input: logo, left: 48, top: 452 }])
+  .jpeg({ quality: 82, mozjpeg: true })
+  .toFile('public/og.jpg')
+console.log('ok og')

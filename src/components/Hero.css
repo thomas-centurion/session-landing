@@ -86,8 +86,17 @@
   font-size: clamp(1.25rem, 1.6vw, 1.45rem);
   font-weight: 600;
 }
+.board__rows li {
+  position: relative;
+}
 .board__rows a {
   text-decoration: none;
+}
+/* Toda la fila es tocable, no solo el texto */
+.board__rows a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
 .board__rows .price {
   color: var(--glow);
@@ -105,7 +114,8 @@
 
 .board__more {
   display: inline-block;
-  margin-top: 1.4rem;
+  margin-top: 0.8rem;
+  padding-block: 0.6rem;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--glow);

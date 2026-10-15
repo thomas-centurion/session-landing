@@ -1,15 +1,17 @@
-import { useMemo } from 'react'
-import { Instagram, MapPin } from 'lucide-react'
+import { useState } from 'react'
+import { todayInArgentina } from '../lib/hours'
+import { useMounted } from '../lib/useMounted'
+import { Instagram, Map as MapIcon, MapPin } from 'lucide-react'
 import { dayNames, hours, local } from '../data/local'
 import './Visit.css'
 
 const week = [3, 4, 5, 6, 0, 1, 2]
 
 export function Visit() {
-  const today = useMemo(() => {
-    const d = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Argentina/Buenos_Aires', weekday: 'short' }).format(new Date())
-    return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(d)
-  }, [])
+  // El día de hoy se marca recién en el navegador: el HTML pre-renderizado no sabe qué día es.
+  const today = useMounted() ? todayInArgentina() : -1
+  // El mapa de Google carga cookies de terceros: se carga recién cuando alguien lo pide.
+  const [showMap, setShowMap] = useState(false)
 
   return (
     <section className="section visit" id="visita" aria-labelledby="visit-title">
@@ -50,12 +52,22 @@ export function Visit() {
         </div>
 
         <div className="visit__map lit-board">
-          <iframe
-            title="Mapa: Session Haus en Alem 599, Pergamino"
-            src={local.mapsEmbed}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          {showMap ? (
+            <iframe
+              title="Mapa: Session Haus en Alem 599, Pergamino"
+              src={local.mapsEmbed}
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          ) : (
+            <div className="visit__map-off">
+              <p>Alem 599, Pergamino</p>
+              <button type="button" className="btn" onClick={() => setShowMap(true)}>
+                <MapIcon aria-hidden="true" />
+                Ver mapa
+              </button>
+              <small>Carga el mapa de Google.</small>
+            </div>
+          )}
         </div>
       </div>
     </section>

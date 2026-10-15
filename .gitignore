@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-server/
 .wrangler/
 
 # Herramientas locales de diseño (se instalan aparte)
@@ -16,3 +17,4 @@ dist/
 .claude/
 DESIGN.md
 PRODUCT.md
+public/preview.png

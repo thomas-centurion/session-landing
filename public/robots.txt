@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://session-haus.thomas-centurion.workers.dev/sitemap.xml

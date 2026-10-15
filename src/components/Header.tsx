@@ -15,7 +15,7 @@ export function Header() {
     <header className="header">
       <div className="wrap header__row">
         <a href="#top" className="header__logo" aria-label="Session Haus, inicio">
-          <img src="/img/logo.png" alt="" width="520" height="271" />
+          <img src="/img/logo.webp" alt="" width="360" height="188" />
         </a>
         <nav aria-label="Secciones">
           <ul className="header__nav">

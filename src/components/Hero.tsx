@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import { BookOpen, MessageCircle } from 'lucide-react'
 import { barStatus, todayInArgentina, type Status } from '../lib/hours'
+import { useMounted } from '../lib/useMounted'
 import { dayNames, local, promos, type Promo } from '../data/local'
 import { menu, peso } from '../data/menu'
 import './Hero.css'
@@ -9,11 +10,14 @@ const golden = menu[0].groups[0].items[0]
 const bigSession = menu[1].groups[0].items[0]
 
 function useStatus() {
-  const [status, setStatus] = useState<Status>(() => barStatus())
+  const mounted = useMounted()
+  const [status, setStatus] = useState<Status | null>(null)
   useEffect(() => {
+    if (!mounted) return
+    setStatus(barStatus())
     const id = setInterval(() => setStatus(barStatus()), 60_000)
     return () => clearInterval(id)
-  }, [])
+  }, [mounted])
   return status
 }
 
@@ -27,9 +31,10 @@ const tubes: { word: string; d: number; pink?: boolean; stutter?: boolean; br?: 
 ]
 
 /** Etiqueta de la promo en el tablero: "Hoy" si corre hoy, si no el día en que corre. */
-function promoTag(p: Promo) {
+function promoTag(p: Promo, knowsToday: boolean) {
   if (!p.days) return 'Promo'
-  return p.days.includes(todayInArgentina()) ? 'Hoy' : p.days.map((d) => dayNames[d]).join(' y ')
+  if (knowsToday && p.days.includes(todayInArgentina())) return 'Hoy'
+  return p.days.map((d) => dayNames[d]).join(' y ')
 }
 
 export function Hero() {
@@ -72,9 +77,11 @@ export function Hero() {
           <h2 id="board-title" className="board__title">
             En la barra
           </h2>
-          <p className={`board__status ${status.open ? 'is-open' : ''}`}>
+          <p className={`board__status ${status?.open ? 'is-open' : ''}`} aria-live="polite">
             <span className="board__lamp" aria-hidden="true" />
-            {status.open ? (
+            {!status ? (
+              <>Miércoles a domingo desde las 18</>
+            ) : status.open ? (
               <>Abierto ahora, hasta {status.closes}</>
             ) : (
               <>
@@ -86,7 +93,7 @@ export function Hero() {
             {promos.map((p) => (
               <li key={p.title} className="lit-row">
                 <a href="#promos">{p.title}</a>
-                <span className="board__tag">{promoTag(p)}</span>
+                <span className="board__tag">{promoTag(p, status !== null)}</span>
               </li>
             ))}
             <li className="lit-row">
