@@ -1,0 +1,41 @@
+.delivery__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.delivery__sign {
+  font-size: clamp(3rem, 7vw, 6.25rem);
+}
+
+.delivery__copy .lede {
+  margin-top: 1.5rem;
+}
+.delivery__copy .btn {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+  min-height: 3.75rem;
+  padding-inline: 2rem;
+}
+
+/* Foto colgada en la pared, inclinada como las placas de promos */
+.delivery__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 60%;
+  border-radius: var(--radius);
+  transform: rotate(2deg);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 899px) {
+  .delivery__grid {
+    grid-template-columns: 1fr;
+  }
+  .delivery__photo {
+    aspect-ratio: 4 / 3;
+    transform: none;
+  }
+}

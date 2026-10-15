@@ -1,0 +1,62 @@
+.patio__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: stretch;
+}
+
+/* La foto del cartel crece hasta igualar la altura de la pared de fotos */
+.patio__intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.patio__intro .lede {
+  margin-top: 1.25rem;
+}
+
+.patio__sign {
+  margin-top: 2.5rem;
+  width: 100%;
+  flex: 1;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: var(--radius);
+}
+
+/* Fotos colgadas en la pared, a distintas alturas */
+.patio__wall {
+  align-self: start;
+  padding-bottom: clamp(2rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+.patio__wall li {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--board);
+  box-shadow: 0 28px 50px -26px rgba(0, 0, 0, 0.9);
+}
+.patio__wall li:nth-child(2n) {
+  transform: translateY(clamp(2rem, 6vw, 5rem));
+}
+.patio__wall img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+@media (max-width: 899px) {
+  .patio__grid {
+    grid-template-columns: 1fr;
+  }
+  .patio__sign {
+    flex: none;
+    aspect-ratio: 4 / 3.4;
+  }
+  .patio__wall {
+    padding-bottom: 2rem;
+  }
+}

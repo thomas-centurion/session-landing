@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-15T03:33:12.756Z",
+        "reason": "Claude: decision sketch for the neon-sign direction, which reproduces the venue's real neon signs (assets/4.jpg, 8.jpg); the card's risk line names the glow familiarity"
+      },
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-10-15T03:36:53.153Z",
+        "reason": "Claude: skeleton sketch of the unchosen category-standard card in a closed decision round; never shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-10-15T04:14:08.292Z",
+        "reason": "Claude: closed decision-round sketch drawn before DESIGN.md existed; never shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-10-15T04:14:08.529Z",
+        "reason": "Claude: closed decision-round sketch drawn before DESIGN.md existed; never shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-splitflap.html"
+        ],
+        "createdAt": "2026-10-15T04:14:08.799Z",
+        "reason": "Claude: closed decision-round sketch drawn before DESIGN.md existed; never shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/canon.html"
+        ],
+        "createdAt": "2026-10-15T04:14:09.046Z",
+        "reason": "Claude: closed decision-round sketch drawn before DESIGN.md existed; never shipped"
+      }
+    ]
+  }
+}

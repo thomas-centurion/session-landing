@@ -1,0 +1,9 @@
+{
+  // Sitio estático en Cloudflare Workers: sirve la carpeta dist/ que genera `npm run build`.
+  "name": "session-haus",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

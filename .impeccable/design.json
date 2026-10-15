@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T12:00:00.000Z",
+  "title": "Design System: Session Haus",
+  "extensions": {
+    "colorMeta": {
+      "amber": { "role": "primary", "displayName": "Neon Amber", "canonical": "#fa9f3f", "tonalRamp": ["#3a1f05", "#5c320a", "#8a4c10", "#b86616", "#e2821f", "#fa9f3f", "#fcc185", "#fee3c6"] },
+      "glow": { "role": "primary", "displayName": "Bulb Glow", "canonical": "#fec67c", "tonalRamp": ["#3d2a0e", "#62441a", "#8c6226", "#b98332", "#e3a552", "#fec67c", "#fed9a8", "#ffeed6"] },
+      "pink": { "role": "secondary", "displayName": "Logo Pink", "canonical": "#e9a4a5", "tonalRamp": ["#3a1c1d", "#5c2e30", "#834446", "#ab5f61", "#cf8183", "#e9a4a5", "#f3c8c9", "#fae6e6"] },
+      "wall": { "role": "neutral", "displayName": "Night Wood Wall", "canonical": "#0f0906", "tonalRamp": ["#0f0906", "#1a100a", "#2a1b12", "#4a3324", "#6e5442", "#958070", "#c0b0a3", "#e9dfd6"] },
+      "board": { "role": "neutral", "displayName": "Board Wood", "canonical": "#160e09", "tonalRamp": ["#0f0906", "#160e09", "#24180f", "#3a2a1d", "#5a4636", "#806b5a", "#ad9a8a", "#dbcfc4"] },
+      "unlit-glass": { "role": "neutral", "displayName": "Unlit Glass", "canonical": "#4a3324", "tonalRamp": ["#1a100a", "#2a1b12", "#3a2719", "#4a3324", "#664b38", "#866a55", "#ad9480", "#d6c4b4"] },
+      "cream": { "role": "neutral", "displayName": "Cream", "canonical": "#fff4ea", "tonalRamp": ["#3b3229", "#5c5147", "#7f7367", "#a8998b", "#d9cbbd", "#ece0d4", "#fff4ea", "#fffaf5"] },
+      "cream-soft": { "role": "neutral", "displayName": "Cream Soft", "canonical": "#d9cbbd", "tonalRamp": ["#3b3229", "#5c5147", "#7f7367", "#a8998b", "#c4b6a8", "#d9cbbd", "#ece0d4", "#fff4ea"] },
+      "cream-faint": { "role": "neutral", "displayName": "Cream Faint", "canonical": "#a8998b", "tonalRamp": ["#2a231d", "#3b3229", "#5c5147", "#7f7367", "#a8998b", "#c4b6a8", "#d9cbbd", "#fff4ea"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#140c08", "tonalRamp": ["#0a0604", "#140c08", "#241810", "#3a2a1d", "#5a4636", "#806b5a", "#ad9a8a", "#dbcfc4"] },
+      "tube-core-amber": { "role": "primary", "displayName": "Amber Tube Core", "canonical": "#fff3e0" },
+      "tube-core-pink": { "role": "secondary", "displayName": "Pink Tube Core", "canonical": "#ffd3d6" },
+      "line": { "role": "neutral", "displayName": "Amber Line", "canonical": "rgba(254, 198, 124, 0.32)" },
+      "line-soft": { "role": "neutral", "displayName": "Cream Hairline", "canonical": "rgba(255, 244, 234, 0.16)" }
+    },
+    "typographyMeta": {
+      "neon-hero": { "displayName": "Neon Hero", "purpose": "The one main sign per page, one tube per word, with switch-on and glass return stroke." },
+      "neon-sign": { "displayName": "Neon Sign", "purpose": "Every section title; uppercase Quicksand with the tube halo." },
+      "board-title": { "displayName": "Board Title", "purpose": "Titles written on lit boards, in glow, without halo." },
+      "display": { "displayName": "Display", "purpose": "Non-neon display: promo titles and menu group titles (Baloo 2 800)." },
+      "body": { "displayName": "Body", "purpose": "All reading text in cream on the wall." },
+      "lede": { "displayName": "Lede", "purpose": "Section intro paragraphs in cream-soft, max 46ch." },
+      "menu-item": { "displayName": "Menu Item", "purpose": "Item names and prices on lit boards; tabular lining numerals." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav and tabs; uppercase, tracked." },
+      "tag": { "displayName": "Tag", "purpose": "Small uppercase pills on pink or amber." }
+    },
+    "shadows": [
+      { "name": "tube-halo", "value": "0 0 1px var(--core), 0 0 4px rgba(var(--gas), 1), 0 0 12px rgba(var(--gas), 0.85), 0 0 28px rgba(var(--gas), 0.55), 0 0 60px rgba(var(--gas), 0.3)", "purpose": "text-shadow of every lit neon word; gas is 250,159,63 (amber) or 240,140,150 (pink)." },
+      { "name": "lit-outline", "value": "0 0 6px rgba(250, 159, 63, 0.55), 0 0 22px rgba(250, 159, 63, 0.22), inset 0 0 16px rgba(250, 159, 63, 0.12), 0 30px 60px -24px rgba(0, 0, 0, 0.9)", "purpose": "Lit boards, with a 1.5px rgba(254,198,124,0.9) border." },
+      { "name": "lit-row", "value": "0 0 18px -6px rgba(250, 159, 63, 0.45)", "purpose": "Rows on hover, tap or focus-within, with background rgba(250,159,63,0.09)." },
+      { "name": "wall-spill", "value": "radial-gradient(ellipse 50% 45% at 32% 45%, rgba(250, 159, 63, 0.3), transparent 72%), radial-gradient(ellipse 34% 28% at 36% 82%, rgba(240, 140, 150, 0.24), transparent 72%)", "purpose": "Background on a pseudo-element behind a sign (inset -20% -10% -30% -15%); light painting the wall." },
+      { "name": "glass-return", "value": "-webkit-text-stroke: 1.5px rgba(255, 214, 180, 0.2); transform: translate(0.05em, 0.06em)", "purpose": "Unlit glass tube visible behind each word of the main sign." },
+      { "name": "hung-object", "value": "0 30px 60px -28px rgba(0, 0, 0, 0.9)", "purpose": "Photos hung on the wall." },
+      { "name": "hung-bar", "value": "0 18px 40px -10px rgba(0, 0, 0, 0.9)", "purpose": "Fixed mobile action bar." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All state transitions." },
+      { "name": "tube-on", "value": "0.9s steps(1, end) both; lit from 30%; per-word delay --d", "purpose": "Neon switch-on, from unlit glass to lit." },
+      { "name": "tube-stutter", "value": "1.5s steps(1, end) both; unlit at 0/22/40%, lit at 18/34/52/100%", "purpose": "Flicker on one or two words per sign." },
+      { "name": "spill-on", "value": "1.6s ease-out both, opacity from 0", "purpose": "Wall spill fades in with the sign." },
+      { "name": "row-light", "value": "0.2s", "purpose": "Lit rows, links, tabs." },
+      { "name": "button", "value": "0.25s", "purpose": "Button fill and 1px press." },
+      { "name": "panel-in", "value": "0.5s, opacity from 0.4", "purpose": "Carta panel switch." },
+      { "name": "reduced-motion", "value": "animation and transition 0.01ms", "purpose": "Tubes land lit at end state; smooth scroll off." }
+    ],
+    "breakpoints": [
+      { "name": "desktop", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Lit Button",
+      "kind": "button",
+      "refersTo": "button-lit",
+      "description": "Primary action: a solid amber pill.",
+      "html": "<a class=\"ds-btn ds-btn--lit\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 7v14\"/><path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"/></svg>Ver la carta</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.55em; min-height: 3.25rem; padding: 0.75rem 1.5rem; border-radius: 999px; border: 2px solid #fec67c; font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: #fec67c; background: transparent; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), color 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn svg { width: 1.2em; height: 1.2em; flex: none; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #fec67c; outline-offset: 3px; } .ds-btn--lit { background: #fa9f3f; border-color: #fa9f3f; color: #140c08; } .ds-btn--lit:hover { background: #fec67c; border-color: #fec67c; }"
+    },
+    {
+      "name": "Unlit Button",
+      "kind": "button",
+      "refersTo": "button-unlit",
+      "description": "Secondary action: an outlined pill, a tube that is off.",
+      "html": "<a class=\"ds-btn-unlit\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/></svg>Pedir delivery</a>",
+      "css": ".ds-btn-unlit { display: inline-flex; align-items: center; gap: 0.55em; min-height: 3.25rem; padding: 0.75rem 1.5rem; border-radius: 999px; border: 2px solid #fec67c; font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: #fec67c; background: transparent; transition: background-color 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-unlit svg { width: 1.2em; height: 1.2em; } .ds-btn-unlit:hover { background: rgba(254, 198, 124, 0.12); } .ds-btn-unlit:active { transform: translateY(1px); } .ds-btn-unlit:focus-visible { outline: 2px solid #fec67c; outline-offset: 3px; }"
+    },
+    {
+      "name": "Neon Sign",
+      "kind": "custom",
+      "description": "Section title as an amber glass tube, with one word in pink, switching on with a stutter.",
+      "html": "<div class=\"ds-wall\"><h2 class=\"ds-neon\"><span class=\"ds-tube\" style=\"--d:0.1s\">La</span> <span class=\"ds-tube ds-tube--stutter ds-neon--pink\" style=\"--d:0.35s\">carta</span></h2></div>",
+      "css": ".ds-wall { background: #0f0906; padding: 2rem; } .ds-neon { --core: #fff3e0; --gas: 250, 159, 63; --unlit: #4a3324; margin: 0; font-family: Quicksand, 'Arial Rounded MT Bold', sans-serif; font-weight: 600; font-size: clamp(2.25rem, 5vw, 3.75rem); text-transform: uppercase; letter-spacing: 0.02em; line-height: 0.95; color: var(--core); text-shadow: 0 0 1px var(--core), 0 0 4px rgba(var(--gas), 1), 0 0 12px rgba(var(--gas), 0.85), 0 0 28px rgba(var(--gas), 0.55), 0 0 60px rgba(var(--gas), 0.3); } .ds-neon--pink { --core: #ffd3d6; --gas: 240, 140, 150; color: var(--core); } .ds-tube { display: inline-block; animation: ds-tube-on 0.9s steps(1, end) both; animation-delay: var(--d, 0s); } .ds-tube--stutter { animation: ds-tube-stutter 1.5s steps(1, end) both; animation-delay: var(--d, 0s); } @keyframes ds-tube-on { 0% { color: var(--unlit); text-shadow: none; } } @keyframes ds-tube-stutter { 0%, 22%, 40% { color: var(--unlit); text-shadow: none; } 18%, 34%, 52%, 100% { color: var(--core); } }"
+    },
+    {
+      "name": "Lit Board with Price Rows",
+      "kind": "card",
+      "refersTo": "lit-board",
+      "description": "Illuminated board holding promos and prices; rows light up on hover or tap.",
+      "html": "<div class=\"ds-wall\"><aside class=\"ds-board\"><p class=\"ds-board__title\">En la barra</p><ul class=\"ds-rows\"><li class=\"ds-row\"><a href=\"#\">2x1 en todas las burgers</a><span class=\"ds-tag\">Promo</span></li><li class=\"ds-row\"><a href=\"#\">Golden Ale</a><span class=\"ds-price\">$6.600</span></li><li class=\"ds-row\"><a href=\"#\">Big Session</a><span class=\"ds-price\">$17.600</span></li></ul></aside></div>",
+      "css": ".ds-wall { background: #0f0906; padding: 2rem; } .ds-board { max-width: 26rem; padding: clamp(1.5rem, 2.8vw, 2.5rem); border: 1.5px solid rgba(254, 198, 124, 0.9); border-radius: 18px; background: rgba(22, 14, 9, 0.92); color: #fff4ea; font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; box-shadow: 0 0 6px rgba(250,159,63,0.55), 0 0 22px rgba(250,159,63,0.22), inset 0 0 16px rgba(250,159,63,0.12), 0 30px 60px -24px rgba(0,0,0,0.9); } .ds-board__title { margin: 0; font-family: Quicksand, 'Arial Rounded MT Bold', sans-serif; font-weight: 600; text-transform: uppercase; font-size: 2rem; line-height: 1; color: #fec67c; } .ds-rows { list-style: none; padding: 0; margin: 1.4rem 0 0; border-top: 1px solid rgba(255,244,234,0.16); } .ds-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem 0.6rem; margin-inline: -0.6rem; border-bottom: 1px dashed rgba(255,244,234,0.16); border-radius: 8px; font-size: 1.3rem; font-weight: 600; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-row a { color: inherit; text-decoration: none; } .ds-row:hover, .ds-row:focus-within { background-color: rgba(250,159,63,0.09); box-shadow: 0 0 18px -6px rgba(250,159,63,0.45); } .ds-price { color: #fec67c; font-weight: 700; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; } .ds-tag { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #140c08; background: #e9a4a5; padding: 0.15rem 0.6rem; border-radius: 999px; }"
+    },
+    {
+      "name": "Menu Item with Leader",
+      "kind": "custom",
+      "description": "Dense carta row: name, dashed leader, price, detail, happy-hour line in pink.",
+      "html": "<div class=\"ds-wall\"><div class=\"ds-item\"><div class=\"ds-item__line\"><span class=\"ds-item__name\">Irish Red Ale</span><span class=\"ds-item__dots\"></span><span class=\"ds-item__price\">$6.600</span></div><p class=\"ds-item__detail\">Ligeramente maltosa, dulzor suave a caramelo y toffee.<span class=\"ds-item__happy\">Happy hour $5.300</span></p></div></div>",
+      "css": ".ds-wall { background: #160e09; padding: 2rem; font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; color: #fff4ea; } .ds-item { padding: 0.8rem 0.75rem; border-radius: 10px; border-bottom: 1px solid rgba(255,244,234,0.08); transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-item:hover { background-color: rgba(250,159,63,0.09); box-shadow: 0 0 18px -6px rgba(250,159,63,0.45); } .ds-item__line { display: flex; align-items: baseline; gap: 0.6rem; } .ds-item__name { font-weight: 700; font-size: 1.2rem; line-height: 1.25; transition: color 0.2s; } .ds-item:hover .ds-item__name { color: #fec67c; } .ds-item__dots { flex: 1; min-width: 1.5rem; border-bottom: 1.5px dashed rgba(254,198,124,0.35); transform: translateY(-0.3em); } .ds-item__price { font-size: 1.2rem; font-weight: 700; color: #fec67c; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; } .ds-item__detail { margin: 0.3rem 0 0; color: #a8998b; font-size: 1rem; line-height: 1.4; max-width: 58ch; } .ds-item__happy { display: block; margin-top: 0.15rem; color: #e9a4a5; font-weight: 700; }"
+    },
+    {
+      "name": "Carta Tabs",
+      "kind": "chip",
+      "refersTo": "tab",
+      "description": "Category pills; selected is lit amber.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Birras</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Burgers</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\">Para picar</button></div>",
+      "css": ".ds-tabs { display: flex; gap: 0.5rem; background: #0f0906; padding: 1rem; } .ds-tab { min-height: 2.9rem; padding: 0.55rem 1.2rem; border-radius: 999px; border: 1.5px solid rgba(255,244,234,0.16); background: transparent; color: #d9cbbd; font: 700 1rem/1 'Archivo Narrow', 'Arial Narrow', sans-serif; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s, background-color 0.2s; } .ds-tab:hover { border-color: rgba(254,198,124,0.32); color: #fec67c; } .ds-tab:focus-visible { outline: 2px solid #fec67c; outline-offset: 3px; } .ds-tab[aria-selected='true'] { background: #fa9f3f; border-color: #fa9f3f; color: #140c08; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Uppercase cream-soft anchors that light to glow, plus a round Instagram button.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Carta</a><a href=\"#\">Promos</a><a href=\"#\">El patio</a><a class=\"ds-nav__ig\" href=\"#\" aria-label=\"Instagram\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"20\" x=\"2\" y=\"2\" rx=\"5\" ry=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/><line x1=\"17.5\" x2=\"17.51\" y1=\"6.5\" y2=\"6.5\"/></svg></a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; background: #0f0906; padding: 1rem 1.5rem; font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; } .ds-nav a { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #d9cbbd; padding-block: 0.5rem; transition: color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-nav a:hover { color: #fec67c; } .ds-nav a:focus-visible { outline: 2px solid #fec67c; outline-offset: 3px; } .ds-nav .ds-nav__ig { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border-radius: 999px; border: 1.5px solid rgba(254,198,124,0.32); color: #fec67c; } .ds-nav__ig svg { width: 1.25rem; height: 1.25rem; }"
+    },
+    {
+      "name": "Hung Photo",
+      "kind": "custom",
+      "description": "Owner photo pinned to the wall: cover crop, 18px corners, slight tilt, long soft shadow.",
+      "html": "<div class=\"ds-wall\"><img class=\"ds-photo\" src=\"/img/promo-2x1-640.webp\" alt=\"Placa 2x1 en burgers\"></div>",
+      "css": ".ds-wall { background: #0f0906; padding: 2.5rem; } .ds-photo { display: block; width: 16rem; aspect-ratio: 1; object-fit: cover; border-radius: 18px; background: #160e09; transform: rotate(-1.5deg); box-shadow: 0 30px 60px -28px rgba(0,0,0,0.9); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Pared de neón",
+    "overview": "The page is the bar's back wall at night. A warm near-black wood wall carries faint vertical plank seams; on it hang glass neon tubes lettered with the venue's own phrases, illuminated boards that hold the carta and prices, and the owner's night photos pinned at slight angles. Light is the only accent: everything that matters is lit, everything else is wood, cream text and dark glass.\n\nDensity is split on purpose. Signs are huge and sparse; boards are dense and scannable, built so a phone visitor finds a price without hunting. Motion has one grammar: light turning on. Nothing slides in, nothing bounces; tubes stutter on, rows light up under the finger, the wall catches the glow.",
+    "keyCharacteristics": [
+      "Dark wood wall (`wall`) with 72px vertical plank seams drawn in CSS, never a photo texture.",
+      "Headlines are neon tubes: Quicksand 600 uppercase, warm core plus a five-layer gas halo.",
+      "Two gases only: amber (primary) and logo pink (second neon, brand mark, tags).",
+      "Content lives on lit boards: thin glowing outline, 18px corners, near-opaque board fill.",
+      "Cream for all reading text; amber `glow` for prices and active links.",
+      "Real photos only, rounded 18px, hung on the wall with a small tilt and a deep drop shadow."
+    ],
+    "rules": [
+      { "name": "The Light Is the Accent Rule", "body": "Colour above the cream ladder appears only as light: neon tubes, lit outlines, prices, solid lit buttons. No amber or pink panels, gradients or decorative fills.", "section": "colors" },
+      { "name": "The Two Gases Rule", "body": "Amber and pink are the only neon colours. Teal and other street-night hues stay inside photos and never enter CSS.", "section": "colors" },
+      { "name": "The Tube Is Quicksand Rule", "body": "Anything that glows is Quicksand 600 uppercase. Baloo 2 never glows; Archivo Narrow never glows.", "section": "typography" },
+      { "name": "The Words Are the Venue's Rule", "body": "Neon lines reuse the bar's real phrases and section names. A tube is a headline, never a label above one.", "section": "typography" },
+      { "name": "The One Light House Rule", "body": "Every glow is declared in `neon.css`. Components compose `.neon`, `.lit-board`, `.lit-row` and `.wall-spill`; they do not write their own glow.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** set every headline as a neon tube: Quicksand 600 uppercase with `.neon`, one tube per word on the main sign.",
+      "**Do** switch light on with stepped timing (`steps(1, end)`) and a stutter on one or two words; light turns on, it never slides.",
+      "**Do** put prices and dense lists on a lit board with dashed separators and `glow` tabular prices.",
+      "**Do** keep reading text in the cream ladder (`cream`, `cream-soft`, `cream-faint`) on the wall.",
+      "**Do** use pills for everything pressable and 18px corners for boards and photos.",
+      "**Do** ship photos through the image script with their provenance JSON."
+    ],
+    "donts": [
+      "**Don't** declare a glow outside `neon.css`.",
+      "**Don't** add a third neon colour or fill panels with amber or pink.",
+      "**Don't** make Baloo 2 or Archivo Narrow glow, and don't set neon in lowercase.",
+      "**Don't** use slide-in, fade-up or scroll-reveal entrances.",
+      "**Don't** use hard or offset shadows; shadows are long, soft and dark, or they are light.",
+      "**Don't** use stock or generated imagery."
+    ]
+  }
+}

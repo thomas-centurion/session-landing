@@ -1,0 +1,200 @@
+:root {
+  --wall: #0f0906;
+  --board: #160e09;
+  --amber: #fa9f3f;
+  --glow: #fec67c;
+  --pink: #e9a4a5;
+  --cream: #fff4ea;
+  --cream-soft: #d9cbbd;
+  --cream-faint: #a8998b;
+  --line: rgba(254, 198, 124, 0.32);
+  --line-soft: rgba(255, 244, 234, 0.16);
+  --ink: #140c08;
+
+  --display: 'Baloo 2', 'Arial Rounded MT Bold', sans-serif;
+  --tube: 'Quicksand', 'Arial Rounded MT Bold', sans-serif;
+  --body: 'Archivo Narrow', 'Arial Narrow', sans-serif;
+
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --max: 1320px;
+  --section: clamp(5rem, 11vw, 9rem);
+  --radius: 18px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: dark;
+  scrollbar-color: #4a3324 var(--wall);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--wall);
+  /* Tablones verticales de la pared del bar */
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0 2px, transparent 2px 72px),
+    repeating-linear-gradient(90deg, transparent 0 36px, rgba(255, 190, 130, 0.025) 36px 37px, transparent 37px 72px);
+  color: var(--cream);
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: clamp(1.0625rem, 0.4vw + 1rem, 1.1875rem);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--wall);
+}
+::-webkit-scrollbar-thumb {
+  background: #4a3324;
+  border: 3px solid var(--wall);
+  border-radius: 999px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--glow);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--glow);
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: 999px;
+}
+.skip:focus {
+  top: 1rem;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section) 0;
+}
+
+.lede {
+  color: var(--cream-soft);
+  max-width: 46ch;
+  font-size: 1.15em;
+  line-height: 1.45;
+}
+
+/* Botones: el principal es una placa ámbar encendida, el secundario un tubo apagado */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--glow);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--glow);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+.btn svg {
+  width: 1.2em;
+  height: 1.2em;
+  flex: none;
+}
+.btn:hover {
+  background: rgba(254, 198, 124, 0.12);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn--lit {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink);
+}
+.btn--lit:hover {
+  background: var(--glow);
+  border-color: var(--glow);
+}
+
+.price {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

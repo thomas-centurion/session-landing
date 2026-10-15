@@ -1,0 +1,178 @@
+.carta__tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: clamp(1.75rem, 3vw, 2.5rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+}
+.carta__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.carta__tab {
+  flex: none;
+  min-height: 2.9rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-soft);
+  background: transparent;
+  color: var(--cream-soft);
+  font: 700 1rem/1 var(--body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    border-color 0.2s var(--ease),
+    color 0.2s var(--ease),
+    background-color 0.2s var(--ease);
+}
+.carta__tab:hover {
+  border-color: var(--line);
+  color: var(--glow);
+}
+.carta__tab[aria-selected='true'] {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--ink);
+}
+
+.carta__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+  animation: panel-in 0.5s var(--ease) both;
+}
+@keyframes panel-in {
+  from {
+    opacity: 0.4;
+  }
+}
+
+/* La foto es la etiqueta de la categoría */
+.carta__figure {
+  position: sticky;
+  top: 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--board);
+}
+.carta__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.carta__label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4rem 1.5rem 1.25rem;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  background: linear-gradient(to top, rgba(15, 9, 6, 0.92) 25%, rgba(15, 9, 6, 0));
+}
+
+.carta__lists {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.carta__note,
+.carta__foot {
+  color: var(--cream-faint);
+  font-weight: 600;
+}
+.carta__note {
+  margin-bottom: 1rem;
+}
+.carta__foot {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.carta__group + .carta__group {
+  margin-top: 2.75rem;
+}
+.carta__group-title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: var(--glow);
+  margin-bottom: 0.5rem;
+}
+
+/* Lista de precios con puntos guía: densa, para encontrar rápido */
+.item {
+  padding: 0.8rem 0.75rem;
+  margin-inline: -0.75rem;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 244, 234, 0.08);
+}
+.item__line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.item__name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  transition: color 0.2s var(--ease);
+}
+.item__dots {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 1.5px dashed rgba(254, 198, 124, 0.35);
+  transform: translateY(-0.3em);
+}
+.item__price {
+  font-size: 1.2rem;
+  color: var(--glow);
+}
+.item:hover .item__name,
+.item:active .item__name {
+  color: var(--glow);
+}
+
+.item__detail {
+  margin-top: 0.3rem;
+  color: var(--cream-faint);
+  font-size: 1rem;
+  line-height: 1.4;
+  max-width: 58ch;
+}
+.item__happy {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--pink);
+  font-weight: 700;
+}
+.item__house {
+  display: inline-block;
+  margin-left: 0.5rem;
+  vertical-align: 0.15em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--pink);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 899px) {
+  .carta__panel {
+    grid-template-columns: 1fr;
+  }
+  .carta__figure {
+    position: relative;
+    top: 0;
+  }
+  .carta__photo {
+    aspect-ratio: 16 / 10;
+  }
+}

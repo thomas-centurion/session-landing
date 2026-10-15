@@ -1,0 +1,73 @@
+.promos__list {
+  display: grid;
+  /* Una columna por promo más el cartel de Instagram, sin estirarse de más */
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  max-width: calc(var(--cols, 3) * 440px);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+  align-items: start;
+}
+
+/* Cada promo es la placa tal como salió en Instagram, pegada en la pared, con su texto debajo */
+.promo__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.9);
+}
+.promo--a .promo__photo {
+  transform: rotate(-1.5deg);
+}
+.promo--b .promo__photo {
+  transform: rotate(1.25deg);
+}
+
+.promo__text {
+  margin-top: 1.4rem;
+}
+.promo__title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  line-height: 1;
+  color: var(--cream);
+}
+.promo__text p {
+  margin-top: 0.35rem;
+  color: var(--glow);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Tercera columna: el cartelito que manda a Instagram por las promos del día */
+.promos__today {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--cream-soft);
+  font-size: 1.15rem;
+}
+.promos__today-title {
+  font-family: var(--tube);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
+  line-height: 1;
+  color: var(--glow);
+}
+.promos__today .btn {
+  align-self: start;
+}
+
+@media (max-width: 899px) {
+  .promos__list {
+    grid-template-columns: 1fr;
+  }
+  .promos__today {
+    align-self: auto;
+  }
+}
