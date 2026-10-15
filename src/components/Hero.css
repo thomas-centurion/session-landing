@@ -1,5 +1,12 @@
+/* El hero ocupa la pantalla entera: una captura muestra solo el hero, no la sección siguiente */
 .hero {
-  padding-block: clamp(7rem, 12vh, 8.5rem) clamp(3rem, 8vh, 5rem);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(8.5rem, 15vh, 10.5rem) clamp(3rem, 6vh, 4rem);
+}
+.hero > .wrap {
+  width: 100%;
 }
 
 .hero__grid {
