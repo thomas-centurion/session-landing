@@ -22,3 +22,7 @@ npm run deploy
 ```
 
 Compila el sitio y lo sube a Cloudflare (la primera vez pide `npx wrangler login`).
+
+## Demo
+
+La demo del proyecto puede ser vista en: https://session-haus.thomas-centurion.workers.dev/
